@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* * {
+	outline: 1px solid red;
+} */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  white-space: nowrap;
+  animation: marquee 40s linear infinite;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  @apply relative flex min-h-screen flex-col bg-bg antialiased;
+}
+
+.ad {
+  @apply relative overflow-hidden bg-gray/10 text-center;
+}
+.ad-list {
+  @apply animate-marquee flex gap-8 whitespace-nowrap;
+}
+
+.h2-title-md {
+  @apply mb-4 text-xl font-semibold;
+}
+.h2-title-lg {
+  @apply mb-4 text-xl font-semibold text-black md:mb-10 md:text-[40px];
+}
+
+.sidebar {
+  @apply relative flex flex-auto items-center;
+}
+.sidebar-container {
+  @apply w-full items-center;
+}
+.sidebar-input {
+  @apply h-12 rounded bg-white;
+}
+.sidebar-button {
+  @apply absolute right-0 flex h-[95%] w-11 items-center hover:bg-transparent;
+}
+
+.accord-wrapper {
+  @apply w-full rounded bg-white p-4;
+}
+.accord-item {
+  @apply border-transparent;
+}
+.accord-trigger {
+  @apply rounded bg-accent px-4 py-2 font-bold;
+}
+.accord-content {
+  @apply mt-6 pb-0;
+}
+
+.section-md {
+  @apply mb-8;
+}
+
+.section-lg {
+  @apply mb-8 mt-8 md:my-16;
+}
+
+.logo {
+  @apply h-12 w-64;
+}
+
+.desktop {
+  @apply hidden md:flex;
+}
+
+.mobile {
+  @apply flex md:hidden;
+}
+
+.center {
+  @apply items-center justify-center;
+}
+
+.between {
+  @apply items-center justify-between;
+}
+
+.header {
+  @apply sticky top-0 z-10 bg-accent;
+}
+.text {
+  @apply text-[10px] font-medium md:text-[14px] md:font-normal xl:text-xs xl:font-normal;
+}
+.header .level-text {
+  @apply -mt-2 font-normal;
+}
+.header-desktop {
+  @apply desktop between container mx-auto gap-7 py-6;
+}
+.header-desktop .left,
+.header-desktop .right {
+  @apply flex gap-7;
+}
+.header-mobile {
+  @apply mobile between container relative mx-auto py-4;
+}
+.header-mobile .right {
+  @apply ml-auto flex w-full items-center justify-end gap-2;
+}
+.menu-trigger {
+  @apply center flex h-12 flex-col hover:bg-transparent md:w-[71px];
+}
+.header .menu-trigger-text {
+  @apply text-xs font-normal md:flex-wrap;
+}
+.header .menu-content {
+  @apply w-screen max-w-full;
+}
+.magazins-trigger {
+  @apply center flex flex-col;
+}
+.header .magazins-content {
+  @apply w-auto rounded-2xl;
+}
+.header .magazins-list {
+  @apply flex flex-col gap-4;
+}
+.header .magazins-list-content {
+  @apply flex items-center gap-4;
+}
+.header .magazins-list-texts {
+  @apply flex flex-col;
+}
+.header .magazins-list-text {
+  @apply font-semibold;
+}
+.header .lang-trigger {
+  @apply hidden w-auto border-none bg-transparent shadow-none xl:flex;
+}
+.header .lang-trigger-container {
+  @apply flex flex-col text-lg font-medium md:text-2xl;
+}
+.header .contact-trigger {
+  @apply hidden items-center justify-between gap-1 xl:flex;
+}
+.header .contact-tel {
+  @apply mb-1 text-xl font-medium;
+}
+.header .contact-content {
+  @apply rounded-2xl bg-white p-4;
+}
+.cart-trigger {
+  @apply center flex flex-col;
+}
+
+.main {
+  @apply container mx-auto flex-auto;
+}
+
+.warranty {
+  @apply mx-auto my-4 max-w-4xl md:p-2 xl:p-6;
+}
+.warranty ul {
+  @apply ml-6 list-disc space-y-2;
+}
+.warranty p {
+  @apply mt-6;
+}
+
+.products-content-wrapper {
+  @apply space-y-8 lg:space-y-10;
+}
+
+.product-list {
+  @apply grid flex-none grid-cols-2 gap-x-3 gap-y-4 md:grid-cols-3 md:gap-x-5 lg:grid-cols-4 lg:gap-x-2;
+}

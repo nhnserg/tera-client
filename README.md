@@ -1,1 +1,1 @@
-# tera-client
+# tm-client
